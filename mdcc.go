@@ -5,43 +5,42 @@ import (
 	"time"
 )
 
-func Execute(timeout time.Duration, Tx *) {
+func Execute(timeout time.Duration, tx *Tx) {
 
 }
 
 type Tx interface {
-	DoOperations();
-	DoOnFailure();
-	DoOnAccept();
-	DoOnCommit(success bool);
-	DoFinally(success bool, timeout bool);
-	DoFinallyRemote(success bool, timeout bool);
+	DoOperations()
+	DoOnFailure()
+	DoOnAccept()
+	DoOnCommit(success bool)
+	DoFinally(success bool, timeout bool)
+	DoFinallyRemote(success bool, timeout bool)
 }
 
 type TxHandler struct {
-	Operations func();
-	OnFailure func();
-	OnAccept func();
-	OnCommit func(success bool);
-	Finally func(success bool, timeout bool);
-	FinallyRemote func(success bool, timeout bool);
+	Operations    func()
+	OnFailure     func()
+	OnAccept      func()
+	OnCommit      func(success bool)
+	Finally       func(success bool, timeout bool)
+	FinallyRemote func(success bool, timeout bool)
 }
 
-
 func (tx *TxHandler) DoOperations() {
-	tx.Operations();
+	tx.Operations()
 }
 
 func (tx *TxHandler) DoOnFailure() {
-	tx.OnFailure();
+	tx.OnFailure()
 }
 
 func (tx *TxHandler) DoOnAccept() {
-	tx.OnAccept();
+	tx.OnAccept()
 }
 
 func (tx *TxHandler) DoOnCommit(success bool) {
-	tx.OnCommit(success);
+	tx.OnCommit(success)
 }
 
 func (tx *TxHandler) DoFinally(success bool, timeout bool) {
@@ -52,7 +51,6 @@ func (tx *TxHandler) DoFinallyRemote(success bool, timeout bool) {
 	tx.DoFinallyRemote(success, timeout)
 }
 
-
-func main () {
+func main() {
 	log.Printf("Hello")
 }
