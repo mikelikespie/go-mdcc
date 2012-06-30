@@ -1,7 +1,6 @@
-package main
+package mdcc
 
 import (
-	"log"
 	"time"
 )
 
@@ -51,6 +50,3 @@ func (tx *TxHandler) DoFinallyRemote(success bool, timeout bool) {
 	tx.DoFinallyRemote(success, timeout)
 }
 
-func main() {
-	log.Printf("Hello")
-}
