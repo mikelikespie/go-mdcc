@@ -4,7 +4,7 @@ import (
 	"time"
 )
 
-func Execute(timeout time.Duration, tx *Tx) {
+func Execute(timeout time.Duration, tx Tx) {
 
 }
 
@@ -49,4 +49,3 @@ func (tx *TxHandler) DoFinally(success bool, timeout bool) {
 func (tx *TxHandler) DoFinallyRemote(success bool, timeout bool) {
 	tx.DoFinallyRemote(success, timeout)
 }
-
