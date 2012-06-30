@@ -25,4 +25,5 @@ type Txn struct {
 }
 
 func main () {
+	log.Printf("Hello")
 }
