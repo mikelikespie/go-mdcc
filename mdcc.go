@@ -2,11 +2,14 @@ package main
 
 import (
 	"log"
+	"time"
 )
 
-type Tx interface {
-	Timeout() int64;
+func Execute(timeout time.Duration, Tx *) {
 
+}
+
+type Tx interface {
 	DoOperations();
 	DoOnFailure();
 	DoOnAccept();
